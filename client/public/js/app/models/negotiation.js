@@ -5,21 +5,21 @@ class Negotiation {
         this._value  = value // private attribute;
     }
 
-    total() {
+    // --- Getters --- //
+
+    get total() {
         return this._amount * this._value;
     }
 
-    // Getters
-
-    getDate() {
+    get date() {
         return this._date;
     }
 
-    getAumount() {
+    get amount() {
         return this._amount;
     }
 
-    getValue() {
-        return this._values;
+    get value() {
+        return this._value;
     }
 }

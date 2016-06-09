@@ -65,7 +65,18 @@
         var negotiation = new Negotiation(date, amount, value);
 
         console.log(negotiation);
-        console.log('Total: '+ negotiation.total())
+        console.log('Date: '+ negotiation.date);
+        console.log('Amount: '+ negotiation.amount);
+        console.log('Value: '+ negotiation.value);
+        console.log('Total: '+ negotiation.total);
+
+        // Property is private
+        negotiation.amount = 10000;
+        console.log('Property is private | Amount: '+ negotiation.amount);
+
+        // But you are free
+        negotiation._amount = 10000;
+        console.log('But you are free | New Amount: '+ negotiation.amount);
     </script>
 </body>
 </html>
