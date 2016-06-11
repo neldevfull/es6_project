@@ -9,12 +9,19 @@ class NegotiationController {
     add(event) {
         event.preventDefault();
 
+        console.log(this._inputDate.value);
+
         let negotiation = new Negotiation(
-            new Date(this._inputDate.value.replace(/-g/, ',')),
+            new Date(this._formatDate(this._inputDate.value)),
             this._inputAmount.value,
             this._inputValue.value
         );
 
         console.log(negotiation);
+    }
+
+    _formatDate(strDate) {
+        var date = strDate.split('-');
+        return new Date(date[0], --date[1], date[2]);
     }
 }
