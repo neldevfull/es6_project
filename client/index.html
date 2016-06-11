@@ -57,6 +57,9 @@
         <tfoot>
         </tfoot>
     </table>
+
+    <button id="btn">CLIQUE AQUI!</button>
+
     <script src="/js/app/models/negotiation.js"></script>
     <script>
         var date   = new Date();
@@ -82,10 +85,21 @@
         console.log("Date: "+ negotiation.date);
 
         // Date is private?
-        console.log("Date is private?: "+ negotiation.date.setDate(11));
+        negotiation.date.setDate(12);
 
         // Now date is private!
         console.log("Date: "+ negotiation.date);
+
+
+        function btn() {
+            document.getElementById('btn').addEventListener('click', function() {
+                for(var i = 0; i < 10; i++) {
+                    console.log(i);
+                }
+            });
+        }
+
+        btn();
     </script>
 </body>
 </html>
