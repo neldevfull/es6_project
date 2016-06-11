@@ -12,7 +12,7 @@ class NegotiationController {
         console.log(this._inputDate.value);
 
         let negotiation = new Negotiation(
-            new Date(this._formatDate(this._inputDate.value)),
+            this._formatDate(this._inputDate.value),
             this._inputAmount.value,
             this._inputValue.value
         );
