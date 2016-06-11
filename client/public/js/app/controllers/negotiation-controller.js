@@ -1,6 +1,6 @@
 class NegotiationController {
     constructor() {
-        this.$           = document.querySelector.bind(document);
+        this.$            = document.querySelector.bind(document);
         this._inputDate   = this.$('#date');
         this._inputAmount = this.$('#amount');
         this._inputValue  = this.$('#value');
@@ -12,9 +12,8 @@ class NegotiationController {
         console.log(this._inputDate.value);
 
         let negotiation = new Negotiation(
-            new Date(...this._inputDate.value.split('-').map(function(item, index) {
-                return item - index % 2;
-            })),
+            new Date(...this._inputDate.value.split('-')
+                .map((item, index) => item - index % 2 )),
             this._inputAmount.value,
             this._inputValue.value
         );
