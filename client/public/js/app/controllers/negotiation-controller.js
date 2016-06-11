@@ -13,7 +13,7 @@ class NegotiationController {
 
         let negotiation = new Negotiation(
             new Date(...this._inputDate.value.split('-').map(function(item, index) {
-                return index === 1 ? --item : item;
+                return item - index % 2;
             })),
             this._inputAmount.value,
             this._inputValue.value
