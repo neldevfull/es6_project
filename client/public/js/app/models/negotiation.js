@@ -1,8 +1,8 @@
 class Negotiation {
     constructor(date, amount, value) {
-        this._date   = date // private attribute;
-        this._amount = amount // private attribute;
-        this._value  = value // private attribute;
+        this._date   = new Date(date.getTime()); // private attribute;
+        this._amount = amount; // private attribute;
+        this._value  = value; // private attribute;
 
         // Freeze object
         Object.freeze(this);
@@ -15,7 +15,7 @@ class Negotiation {
     }
 
     get date() {
-        return this._date;
+        return new Date(this._date.getTime());
     }
 
     get amount() {
