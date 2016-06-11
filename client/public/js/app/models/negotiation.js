@@ -3,6 +3,9 @@ class Negotiation {
         this._date   = date // private attribute;
         this._amount = amount // private attribute;
         this._value  = value // private attribute;
+
+        // Freeze object
+        Object.freeze(this);
     }
 
     // --- Getters --- //

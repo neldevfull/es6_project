@@ -74,9 +74,15 @@
         negotiation.amount = 10000;
         console.log('Property is private | Amount: '+ negotiation.amount);
 
-        // But you are free
+        // But you are free ?
         negotiation._amount = 10000;
-        console.log('But you are free | New Amount: '+ negotiation.amount);
+        console.log('But you are free ? | New Amount: '+ negotiation.amount);
+
+        // Date
+        console.log("Date: "+ negotiation.date);
+
+        // Date is private?
+        console.log("Date is private?: "+ negotiation.setDate(new Date));
     </script>
 </body>
 </html>
