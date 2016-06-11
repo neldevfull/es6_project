@@ -12,16 +12,13 @@ class NegotiationController {
         console.log(this._inputDate.value);
 
         let negotiation = new Negotiation(
-            this._formatDate(this._inputDate.value),
+            new Date(...this._inputDate.value.split('-').map(function(item, index) {
+                return index === 1 ? --item : item;
+            })),
             this._inputAmount.value,
             this._inputValue.value
         );
 
         console.log(negotiation);
-    }
-
-    _formatDate(strDate) {
-        var date = strDate.split('-');
-        return new Date(date[0], --date[1], date[2]);
     }
 }
