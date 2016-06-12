@@ -10,6 +10,7 @@ class Negotiations {
     // --- Getters --- //
 
     get list() {
-        return this._list;
+        // Concat in array for armor list
+        return [].concat(this._list);
     }
 }
