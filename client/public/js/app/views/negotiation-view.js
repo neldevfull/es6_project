@@ -3,11 +3,11 @@ class NegotiationView {
         this._view = view;
     }
 
-    render(negotations) {
-        this._view.innerHTML = this._template(negotations);
+    render(negotiations) {
+        this._view.innerHTML = this._template(negotiations);
     }
 
-    _template(negotations) {
+    _template(negotiations) {
         return `
             <table class="table table-hover table-bordered">
                 <thead>
@@ -20,17 +20,24 @@ class NegotiationView {
                 </thead>
                 <tbody>
                     ${
-                        negotations.map(negotation => `
+                        negotiations.map(negotiation => `
                             <tr>
-                                <td>${DateHelper.convertForString(negotation.date)}</td>
-                                <td>${negotation.amount}</td>
-                                <td>${negotation.value}</td>
-                                <td>${negotation.total}</td>
+                                <td>${DateHelper.convertForString(negotiation.date)}</td>
+                                <td>${negotiation.amount}</td>
+                                <td>${negotiation.value}</td>
+                                <td>${negotiation.total}</td>
                             </tr>
                         `).join('')
                     }
                 </tbody>
                 <tfoot>
+                    <td colspan="3">Sub total</td>
+                    <td>
+                        ${
+                            negotiations.reduce((result, negotiation) =>
+                                result + negotiation.total ,0.0)
+                        }
+                    </td>
                 </tfoot>
             </table>
         `;
