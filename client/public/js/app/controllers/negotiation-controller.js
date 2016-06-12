@@ -1,12 +1,15 @@
 class NegotiationController {
     constructor() {
-        this.$            = document.querySelector.bind(document);
-        this._inputDate   = this.$('#date');
-        this._inputAmount = this.$('#amount');
-        this._inputValue  = this.$('#value');
+        var $             = document.querySelector.bind(document);
+        this._inputDate   = $('#date');
+        this._inputAmount = $('#amount');
+        this._inputValue  = $('#value');
 
         // List of the negotiations
         this._negotiations = new Negotiations();
+
+        // Rendering View
+        new NegotiationView($('#negotiationView')).render();
     }
 
     add(event) {
