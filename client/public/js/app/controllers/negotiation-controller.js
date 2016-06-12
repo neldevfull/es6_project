@@ -9,15 +9,13 @@ class NegotiationController {
     add(event) {
         event.preventDefault();
 
-        console.log(this._inputDate.value);
-
         let negotiation = new Negotiation(
-            new Date(...this._inputDate.value.split('-')
-                .map((item, index) => item - index % 2 )),
+            DateHelper.convertForDate(this._inputDate.value),
             this._inputAmount.value,
             this._inputValue.value
         );
 
+        console.log(DateHelper.convertForString(negotiation.date));
         console.log(negotiation);
     }
 }
