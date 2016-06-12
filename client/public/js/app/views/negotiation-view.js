@@ -35,7 +35,7 @@ class NegotiationView {
                     <td>
                         ${
                             negotiations.reduce((result, negotiation) =>
-                                result + negotiation.total ,0.0)
+                                result + negotiation.total, 0.0)
                         }
                     </td>
                 </tfoot>
