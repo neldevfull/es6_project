@@ -8,8 +8,8 @@ class NegotiationController {
         // List of the negotiations
         this._negotiations = new Negotiations();
 
-        // Rendering View
-        new NegotiationView($('#negotiationView')).render();
+        // View
+        this.negotiationView = new NegotiationView($('#negotiationView'));
     }
 
     add(event) {
@@ -17,6 +17,9 @@ class NegotiationController {
 
         this._negotiations.add(this._createNegotiation());
         this._cleanForm();
+
+        // Rendering View
+        this.negotiationView.render(this._negotiations.list);
 
         console.log(this._negotiations.list);
     }
